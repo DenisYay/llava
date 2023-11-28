@@ -148,9 +148,7 @@ class LlavaModel(rh.Module):
 
 if __name__ == "__main__":
     gpu = rh.ondemand_cluster(name='rh-a10x', instance_type='A10G:1')
-    # gpu.run(['pip install git+https://github.com/haotian-liu/LLaVA.git@786aa6a19ea10edc6f574ad2e16276974e9aaa3a'])
-    # Use get_or_to() if you want to reuse an existing instance of a running model
-    remote_llava_model = LlavaModel().to(system=gpu, name="llava-model")
+    remote_llava_model = LlavaModel().get_or_to(system=gpu, name="llava-model")
 
     ans = remote_llava_model.start_new_chat(img_path="https://upcdn.io/kW15bGw/raw/uploads/2023/09/22/file-387X.png",
                                             prompt="How would I make this dish? Step by step please.")
