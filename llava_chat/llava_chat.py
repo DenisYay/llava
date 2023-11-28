@@ -157,7 +157,7 @@ if __name__ == "__main__":
           f"{ans}"
           f"\n\n")
 
-    ans = remote_llava_model.continue_chat(prompt="How does it taste like?")
+    ans = remote_llava_model.continue_chat(prompt="What do you think it tastes like?")
 
     print(f"\n\n... Answer ...\n"
           f"{ans}"
